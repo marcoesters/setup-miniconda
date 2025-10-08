@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - default-env-condarc-test
   schedule:
     # Note that cronjobs run on master/main by default
     - cron: "0 0 * * *"
