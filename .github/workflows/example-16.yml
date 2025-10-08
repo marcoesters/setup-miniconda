@@ -97,7 +97,6 @@ jobs:
           ARTIFACTS_DIRECTORY: ${{ runner.temp }}/_installer
           EXT: ${{ matrix.os == 'windows' && 'exe' || 'sh' }}
         run: |
-          [[ "$(uname)" == MINGW* ]] && ARTIFACTS_DIRECTORY=$(cygpath "${ARTIFACTS_DIRECTORY}")
           INSTALLER_FILE=$(find "${ARTIFACTS_DIRECTORY}" -name "*.${EXT}" | head -n 1)
           echo "installer-file=${INSTALLER_FILE}" >> ${GITHUB_OUTPUT}
         shell: bash
